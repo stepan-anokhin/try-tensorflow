@@ -18,6 +18,9 @@ zipp = "^3.10.0"
 importlib-metadata = "^5.0.0"
 tfds-nightly = "^4.7.0-alpha.202211030046"
 pandas = "^1.5.1"
+umap-learn = "^0.5.3"
+pacmap = "^0.6.5"
+trimap = "^1.1.4"
 
 [tool.poetry.dev-dependencies]
 

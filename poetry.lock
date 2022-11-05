@@ -7,6 +7,14 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "annoy"
+version = "1.17.1"
+description = "Approximate Nearest Neighbors in C++/Python optimized for memory usage and loading/saving to disk."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "anyio"
 version = "3.6.2"
 description = "High level compatibility layer for multiple asynchronous event loop implementations"
@@ -599,6 +607,14 @@ MarkupSafe = ">=2.0"
 i18n = ["Babel (>=2.7)"]
 
 [[package]]
+name = "joblib"
+version = "1.2.0"
+description = "Lightweight pipelining with Python functions"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "jsonschema"
 version = "4.16.0"
 description = "An implementation of JSON Schema validation for Python"
@@ -769,6 +785,14 @@ description = "Clang Python Bindings, mirrored from the official LLVM repo: http
 category = "main"
 optional = false
 python-versions = "*"
+
+[[package]]
+name = "llvmlite"
+version = "0.39.1"
+description = "lightweight wrapper around basic LLVM functionality"
+category = "main"
+optional = false
+python-versions = ">=3.7"
 
 [[package]]
 name = "lockfile"
@@ -1009,6 +1033,18 @@ jupyter-server = ">=1.8,<3"
 test = ["pytest", "pytest-console-scripts", "pytest-tornasync"]
 
 [[package]]
+name = "numba"
+version = "0.56.4"
+description = "compiling Python code using LLVM"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+llvmlite = ">=0.39.0dev0,<0.40"
+numpy = ">=1.18,<1.24"
+
+[[package]]
 name = "numpy"
 version = "1.23.4"
 description = "NumPy is the fundamental package for array computing with Python."
@@ -1065,6 +1101,20 @@ python-versions = ">=3.6"
 
 [package.dependencies]
 pyparsing = ">=2.0.2,<3.0.5 || >3.0.5"
+
+[[package]]
+name = "pacmap"
+version = "0.6.5"
+description = "The official implementation for PaCMAP: Pairwise Controlled Manifold Approximation Projection"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+annoy = ">=1.11"
+numba = ">=0.50"
+numpy = ">=1.20"
+scikit-learn = ">=0.20"
 
 [[package]]
 name = "pandas"
@@ -1252,6 +1302,21 @@ python-versions = ">=3.6"
 
 [package.extras]
 plugins = ["importlib-metadata"]
+
+[[package]]
+name = "pynndescent"
+version = "0.5.8"
+description = "Nearest Neighbor Descent"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+joblib = ">=0.11"
+llvmlite = ">=0.30"
+numba = ">=0.51.2"
+scikit-learn = ">=0.18"
+scipy = ">=1.0"
 
 [[package]]
 name = "pyparsing"
@@ -1442,6 +1507,42 @@ python-versions = ">=3.6,<4"
 
 [package.dependencies]
 pyasn1 = ">=0.1.3"
+
+[[package]]
+name = "scikit-learn"
+version = "1.1.3"
+description = "A set of python modules for machine learning and data mining"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+joblib = ">=1.0.0"
+numpy = ">=1.17.3"
+scipy = ">=1.3.2"
+threadpoolctl = ">=2.0.0"
+
+[package.extras]
+benchmark = ["matplotlib (>=3.1.2)", "pandas (>=1.0.5)", "memory-profiler (>=0.57.0)"]
+docs = ["matplotlib (>=3.1.2)", "scikit-image (>=0.16.2)", "pandas (>=1.0.5)", "seaborn (>=0.9.0)", "memory-profiler (>=0.57.0)", "sphinx (>=4.0.1)", "sphinx-gallery (>=0.7.0)", "numpydoc (>=1.2.0)", "Pillow (>=7.1.2)", "sphinx-prompt (>=1.3.0)", "sphinxext-opengraph (>=0.4.2)"]
+examples = ["matplotlib (>=3.1.2)", "scikit-image (>=0.16.2)", "pandas (>=1.0.5)", "seaborn (>=0.9.0)"]
+tests = ["matplotlib (>=3.1.2)", "scikit-image (>=0.16.2)", "pandas (>=1.0.5)", "pytest (>=5.0.1)", "pytest-cov (>=2.9.0)", "flake8 (>=3.8.2)", "black (>=22.3.0)", "mypy (>=0.961)", "pyamg (>=4.0.0)", "numpydoc (>=1.2.0)"]
+
+[[package]]
+name = "scipy"
+version = "1.9.3"
+description = "Fundamental algorithms for scientific computing in Python"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+numpy = ">=1.18.5,<1.26.0"
+
+[package.extras]
+test = ["pytest", "pytest-cov", "pytest-xdist", "asv", "mpmath", "gmpy2", "threadpoolctl", "scikit-umfpack"]
+doc = ["sphinx (!=4.1.0)", "pydata-sphinx-theme (==0.9.0)", "sphinx-panels (>=0.5.2)", "matplotlib (>2)", "numpydoc", "sphinx-tabs"]
+dev = ["mypy", "typing-extensions", "pycodestyle", "flake8"]
 
 [[package]]
 name = "send2trash"
@@ -1715,6 +1816,14 @@ wsc273 = ["bs4", "lxml"]
 youtube_vis = ["pycocotools"]
 
 [[package]]
+name = "threadpoolctl"
+version = "3.1.0"
+description = "threadpoolctl"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "tinycss2"
 version = "1.2.1"
 description = "A tiny CSS parser"
@@ -1783,12 +1892,45 @@ docs = ["myst-parser", "pydata-sphinx-theme", "sphinx"]
 test = ["pre-commit", "pytest"]
 
 [[package]]
+name = "trimap"
+version = "1.1.4"
+description = "TriMap: Large-scale Dimensionality Reduction Using Triplets"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+annoy = ">=1.11"
+numba = ">=0.34"
+scikit-learn = ">=0.16"
+
+[[package]]
 name = "typing-extensions"
 version = "4.4.0"
 description = "Backported and Experimental Type Hints for Python 3.7+"
 category = "main"
 optional = false
 python-versions = ">=3.7"
+
+[[package]]
+name = "umap-learn"
+version = "0.5.3"
+description = "Uniform Manifold Approximation and Projection"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+numba = ">=0.49"
+numpy = ">=1.17"
+pynndescent = ">=0.5"
+scikit-learn = ">=0.22"
+scipy = ">=1.0"
+tqdm = "*"
+
+[package.extras]
+parametric_umap = ["tensorflow (>=2.1)", "tensorflow-probability (>=0.10)"]
+plot = ["pandas", "matplotlib", "datashader", "bokeh", "holoviews", "colorcet", "seaborn", "scikit-image"]
 
 [[package]]
 name = "urllib3"
@@ -1877,10 +2019,11 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "flake8 
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10,<3.11"
-content-hash = "943b1d8df3d1e4a7ea56bba1e6242fe7288e2bff973f14d9e38f2627cf86ac79"
+content-hash = "7d5cb4a5f0ff56681e5b69237d130175fecbac3dc6f4ff8caacba240d25fbf65"
 
 [metadata.files]
 absl-py = []
+annoy = []
 anyio = []
 appnope = []
 argon2-cffi = []
@@ -1926,6 +2069,7 @@ ipython-genutils = []
 ipywidgets = []
 jedi = []
 jinja2 = []
+joblib = []
 jsonschema = []
 jupyter = []
 jupyter-client = []
@@ -1938,6 +2082,7 @@ keras = []
 keras-preprocessing = []
 kiwisolver = []
 libclang = []
+llvmlite = []
 lockfile = []
 luigi = []
 markdown = []
@@ -1952,11 +2097,13 @@ nbformat = []
 nest-asyncio = []
 notebook = []
 notebook-shim = []
+numba = []
 numpy = []
 oauthlib = []
 opencv-python = []
 opt-einsum = []
 packaging = []
+pacmap = []
 pandas = []
 pandocfilters = []
 parso = []
@@ -1975,6 +2122,7 @@ pyasn1 = []
 pyasn1-modules = []
 pycparser = []
 pygments = []
+pynndescent = []
 pyparsing = []
 pyqt5 = []
 pyqt5-qt5 = []
@@ -1991,6 +2139,8 @@ qtpy = []
 requests = []
 requests-oauthlib = []
 rsa = []
+scikit-learn = []
+scipy = []
 send2trash = []
 setuptools-scm = []
 six = [
@@ -2011,13 +2161,16 @@ tensorflow-metadata = []
 termcolor = []
 terminado = []
 tfds-nightly = []
+threadpoolctl = []
 tinycss2 = []
 toml = []
 tomli = []
 tornado = []
 tqdm = []
 traitlets = []
+trimap = []
 typing-extensions = []
+umap-learn = []
 urllib3 = []
 wcwidth = []
 webencodings = []
