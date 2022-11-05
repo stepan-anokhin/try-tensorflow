@@ -13,6 +13,11 @@ matplotlib = "^3.6.1"
 PyQt5 = "^5.15.7"
 tensorflow = "^2.10.0"
 jupyter = "^1.0.0"
+importlib-resources = "^5.10.0"
+zipp = "^3.10.0"
+importlib-metadata = "^5.0.0"
+tfds-nightly = "^4.7.0-alpha.202211030046"
+pandas = "^1.5.1"
 
 [tool.poetry.dev-dependencies]
 
