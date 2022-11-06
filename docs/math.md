@@ -1,6 +1,6 @@
 # Example Latex Math 
 
-Inline: $x=\sum_{c=1}{n}{p_c}$
+Inline: $x=\sum_{c}{p_c}$
 
 Block:
 
