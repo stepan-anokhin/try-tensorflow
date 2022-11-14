@@ -22,6 +22,7 @@ umap-learn = "^0.5.3"
 pacmap = "^0.6.5"
 trimap = "^1.1.4"
 scikit-learn = "^1.1.3"
+ipywidgets = "^8.0.2"
 
 [tool.poetry.dev-dependencies]
 
