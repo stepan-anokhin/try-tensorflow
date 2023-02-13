@@ -1713,6 +1713,22 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "tensorflow-hub"
+version = "0.12.0"
+description = "TensorFlow Hub is a library to foster the publication, discovery, and consumption of reusable parts of machine learning models."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+numpy = ">=1.12.0"
+protobuf = ">=3.8.0"
+
+[package.extras]
+make_image_classifier = ["keras-preprocessing"]
+make_nearest_neighbour_index = ["apache-beam", "annoy"]
+
+[[package]]
 name = "tensorflow-io-gcs-filesystem"
 version = "0.27.0"
 description = "TensorFlow IO"
@@ -2030,7 +2046,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "flake8 
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10,<3.11"
-content-hash = "3d6e27183822196dade5752e7d0b65e836c6e0706a712b6fcbd61bc12eba959f"
+content-hash = "83f65388ed6531bc33443ead455fec43049ee0bba307b22e35ec38875de8b5f3"
 
 [metadata.files]
 absl-py = []
@@ -2168,6 +2184,7 @@ tensorboard-data-server = []
 tensorboard-plugin-wit = []
 tensorflow = []
 tensorflow-estimator = []
+tensorflow-hub = []
 tensorflow-io-gcs-filesystem = []
 tensorflow-metadata = []
 termcolor = []
